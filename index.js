@@ -21,7 +21,7 @@ const books = [
 app.use(auth(config));
 
 app.get("/", (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? "Logged in" : "Logged out");
+  res.redirect("https://www.nellysugu.com/auth0-demo-front-end/");
 });
 
 app.get("/books", requiresAuth(), (req, res) => {
