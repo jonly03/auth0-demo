@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const express = require("express");
-const corst = require("cors");
+const cors = require("cors");
 const { auth, requiresAuth } = require("express-openid-connect");
 const { config } = require("./auth0-config");
 
