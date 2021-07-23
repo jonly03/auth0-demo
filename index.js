@@ -24,6 +24,14 @@ app.get("/", (req, res) => {
   res.redirect("https://www.nellysugu.com/auth0-demo-front-end/");
 });
 
+app.get("/user/me", (req, res) => {
+  if (req.oidc.user !== undefined) {
+    return res.send({ user: req.oidc.user });
+  } else {
+    res.send({});
+  }
+});
+
 app.get("/books", requiresAuth(), (req, res) => {
   res.send({
     books,
