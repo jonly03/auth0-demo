@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const express = require("express");
+const corst = require("cors");
 const { auth, requiresAuth } = require("express-openid-connect");
 const { config } = require("./auth0-config");
 
@@ -16,6 +17,8 @@ const books = [
     author: "Paulo Coelho",
   },
 ];
+
+app.use(cors());
 
 // /login /callback /logout
 app.use(auth(config));
